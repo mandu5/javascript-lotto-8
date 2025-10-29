@@ -1,3 +1,7 @@
+const LOTTO_NUMBER_COUNT = 6;
+const LOTTO_MIN_NUMBER = 1;
+const LOTTO_MAX_NUMBER = 45;
+
 class Lotto {
   #numbers;
 
@@ -13,14 +17,14 @@ class Lotto {
   }
 
   #validateLength(numbers) {
-    if (numbers.length !== 6) {
+    if (numbers.length !== LOTTO_NUMBER_COUNT) {
       throw new Error("[ERROR] 로또 번호는 6개여야 합니다.");
     }
   }
 
   #validateRange(numbers) {
     numbers.forEach((number) => {
-      if (number < 1 || number > 45) {
+      if (number < LOTTO_MIN_NUMBER || number > LOTTO_MAX_NUMBER) {
         throw new Error("[ERROR] 로또 번호는 1부터 45 사이의 숫자여야 합니다.");
       }
     });
@@ -33,6 +37,17 @@ class Lotto {
     }
   }
 
+  getNumbers() {
+    return [...this.#numbers];
+  }
+
+  getMatchCount(winningNumbers) {
+    return this.#numbers.filter((number) => winningNumbers.includes(number)).length;
+  }
+
+  hasBonusNumber(bonusNumber) {
+    return this.#numbers.includes(bonusNumber);
+  }
   // TODO: 추가 기능 구현
 }
 

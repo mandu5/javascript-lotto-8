@@ -52,7 +52,10 @@
 
 ### 2일차
 
-- Lotto 클래스 확장 (검증/유틸리티)
+- [x] Lotto 클래스 확장 (유틸리티)
+  - [x] getNumbers(): 번호 조회
+  - [x] getMatchCount(): 일치 개수 계산
+  - [x] hasBonusNumber(): 보너스 포함 여부
 
 ### 3일차
 
