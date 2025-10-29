@@ -42,7 +42,8 @@ class Lotto {
   }
 
   getMatchCount(winningNumbers) {
-    return this.#numbers.filter((number) => winningNumbers.includes(number)).length;
+    return this.#numbers.filter((number) => winningNumbers.includes(number))
+      .length;
   }
 
   hasBonusNumber(bonusNumber) {
